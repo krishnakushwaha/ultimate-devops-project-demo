@@ -52,7 +52,7 @@ jobs:
             install-mode: binary
             github-token: ${{ secrets.GITHUB_TOKEN }}
             verify: true
-            only-new-issues: false
+            only-new-issues: true
             skip-cache: false
             skip-save-cache: false
             problem-matchers: false
