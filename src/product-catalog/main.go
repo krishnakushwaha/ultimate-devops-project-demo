@@ -91,6 +91,7 @@ func initTracerProvider() *sdktrace.TracerProvider {
 		sdktrace.WithBatcher(exporter),
 		sdktrace.WithResource(initResource()),
 	)
+	
 	otel.SetTracerProvider(tp)
 	otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(propagation.TraceContext{}, propagation.Baggage{}))
 	return tp
