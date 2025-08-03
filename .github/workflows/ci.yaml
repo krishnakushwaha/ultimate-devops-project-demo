@@ -47,8 +47,16 @@ jobs:
           uses: golangci/golangci-lint-action@v6
           with:
             version: v1.55.2
-            args: ./...
             working-directory: src/product-catalog
+            args: ./...
+            install-mode: binary
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            verify: true
+            only-new-issues: false
+            skip-cache: false
+            skip-save-cache: false
+            problem-matchers: false
+            cache-invalidation-interval: 7
 
     docker:
         runs-on: ubuntu-latest
