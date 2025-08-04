@@ -138,6 +138,7 @@ func main() {
 	err = runtime.Start(runtime.WithMinimumReadMemStatsInterval(time.Second))
 	if err != nil {
 		log.Fatal(err)
+		
 	}
 
 	svc := &productCatalog{}
